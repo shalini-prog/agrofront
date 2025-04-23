@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+const API_URL = "https://agroback-vi1y.onrender.com"
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ const Dashboard = () => {
   useEffect(() => {
     const getRoleAndRedirect = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/auth/me', { withCredentials: true });
+        const res = await axios.get(`${API_URL}/auth/me`, { withCredentials: true });
         const role = res.data.role;
 
         if (role === 'user') {

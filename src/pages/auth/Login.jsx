@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+const API_URL = "https://agroback-vi1y.onrender.com"
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -20,7 +21,7 @@ const Login = () => {
     setError('');
 
     try {
-      const res = await axios.post('http://localhost:5000/auth/login', formData, {
+      const res = await axios.post(`${API_URL}/auth/login`, formData, {
         withCredentials: true, // for cookie-based JWT
       });
 

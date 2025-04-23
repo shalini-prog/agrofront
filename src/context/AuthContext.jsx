@@ -1,6 +1,8 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
+const API_URL = "https://agroback-vi1y.onrender.com"
+
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -8,7 +10,7 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUser = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/auth/me', {
+      const res = await axios.get(`${API_URL}/auth/me`, {
         withCredentials: true,
       });
       setUser(res.data.user);

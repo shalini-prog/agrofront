@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+const API_URL = "https://agroback-vi1y.onrender.com"
 
 const UserDashboard = () => {
   const [profile, setProfile] = useState({ name: '', phone: '', dob: '' });
@@ -8,7 +9,7 @@ const UserDashboard = () => {
   const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/auth/user/profile', { withCredentials: true })
+    axios.get(`${API_URL}/auth/user/profile`, { withCredentials: true })
       .then(res => {
         setProfile(res.data);
         setIsComplete(res.data.name && res.data.phone && res.data.dob);
@@ -26,7 +27,7 @@ const UserDashboard = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.post('http://localhost:5000/auth/user/profile', profile, { withCredentials: true })
+    axios.post(`${API_URL}/auth/user/profile`, profile, { withCredentials: true })
       .then(res => {
         setMsg(res.data.msg);
         setIsComplete(true);
@@ -35,7 +36,7 @@ const UserDashboard = () => {
   };
 
   const handleLogout = () => {
-    axios.post('http://localhost:5000/auth/logout', { withCredentials: true })
+    axios.post(`${API_URL}/auth/logout`, { withCredentials: true })
       .then(() => {
         window.location.href = '/login';
       })

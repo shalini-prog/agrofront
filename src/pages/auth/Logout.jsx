@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';  // For navigation
+const API_URL = "https://agroback-vi1y.onrender.com"
 
 const LogoutButton = () => {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ const LogoutButton = () => {
   const logout = async () => {
     try {
       // Send the logout request to the backend
-      await axios.post('http://localhost:5000/auth/logout', {}, { withCredentials: true });
+      await axios.post(`${API_URL}/auth/logout`, {}, { withCredentials: true });
 
       // Redirect the user to the login page after logout
       navigate('/login');

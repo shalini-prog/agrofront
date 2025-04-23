@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+const API_URL = "https://agroback-vi1y.onrender.com"
 
 const FarmerDashboard = () => {
   const [profile, setProfile] = useState({ name: '', zone: '', area: '' });
@@ -8,7 +9,7 @@ const FarmerDashboard = () => {
   const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/auth/farmer/profile', { withCredentials: true })
+    axios.get(`${API_URL}/auth/farmer/profile`, { withCredentials: true })
       .then(res => {
         setProfile(res.data);
         setIsComplete(res.data.name && res.data.zone && res.data.area); // ✅ Check completeness
@@ -26,7 +27,7 @@ const FarmerDashboard = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.post('http://localhost:5000/auth/farmer/profile', profile, { withCredentials: true })
+    axios.post(`${API_URL}/auth/farmer/profile`, profile, { withCredentials: true })
       .then(res => {
         setMsg(res.data.msg);
         setIsComplete(true); // ✅ After update, set complete
@@ -35,7 +36,7 @@ const FarmerDashboard = () => {
   };
 
   const handleLogout = () => {
-    axios.post('http://localhost:5000/auth/logout', { withCredentials: true })
+    axios.post(`${API_URL}/auth/logout`, { withCredentials: true })
       .then(() => {
         window.location.href = '/login';
       })
