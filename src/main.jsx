@@ -9,7 +9,7 @@ import './index.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Routes>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
@@ -23,7 +23,7 @@ function App() {
         {/* catch‑all 404 so you never get a blank page */}
         <Route path="*" element={<h1>404 – Not Found</h1>} />
       </Routes>
-    </BrowserRouter>
+      </Routes>
   );
 }
 
