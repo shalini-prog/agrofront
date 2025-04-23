@@ -38,6 +38,7 @@ const FarmerDashboard = () => {
   const handleLogout = () => {
     axios.post(`${API_URL}/auth/logout`, { withCredentials: true })
       .then(() => {
+        localStorage.removeItem('token');
         window.location.href = '/login';
       })
       .catch(err => {
