@@ -39,7 +39,7 @@ const FarmerDashboard = () => {
     axios.post(`${API_URL}/auth/logout`, { withCredentials: true })
       .then(() => {
         localStorage.removeItem('token');
-        window.location.href = '/login';
+        window.location.href = 'auth/login';
       })
       .catch(err => {
         console.error('Logout failed:', err);

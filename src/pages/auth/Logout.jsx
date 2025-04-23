@@ -12,7 +12,7 @@ const LogoutButton = () => {
       await axios.post(`${API_URL}/auth/logout`, {}, { withCredentials: true });
       localStorage.removeItem('token');
       // Redirect the user to the login page after logout
-      navigate('/login');
+      navigate('auth/login');
     } catch (error) {
       console.error('Logout error:', error);
     }
