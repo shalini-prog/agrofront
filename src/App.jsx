@@ -11,8 +11,9 @@ import './index.css';
 
 function App() {
   return (
-    <Router>
-      <Switch>
+    <BrowserRouter>
+      <Router>
+      
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
@@ -21,8 +22,10 @@ function App() {
         <Route path="/user/dashboard" element={<UserDashboard />} />
         <Route path="/farmer/dashboard" element={<FarmerDashboard />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
-      </Switch>
-    </Router>
+      
+      </Router>
+      </BrowserRouter>
+
   );
 }
 
