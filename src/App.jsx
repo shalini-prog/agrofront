@@ -1,31 +1,26 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
-import Home from './pages/Home';
-import UserDashboard from './pages/user/UserDashboard';
+
 import FarmerDashboard from './pages/farmer/FarmerDashboard';
-import AdminDashboard from './pages/admin/AdminDashBoard'; // Corrected import
-import './index.css';
-
-
+import CustomerDashboard from './pages/user/UserDashboard';
+import AdminDashboard from './pages/admin/AdminDashBoard';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Router>
-      
+    <Router>
+      <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
-        {/* Specific dashboards for each role */}
-        <Route path="/user/dashboard" element={<UserDashboard />} />
+        {/* Dashboards */}
         <Route path="/farmer/dashboard" element={<FarmerDashboard />} />
+        <Route path="/customer/dashboard" element={<CustomerDashboard />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
-      
-      </Router>
-      </BrowserRouter>
-
+      </Routes>
+    </Router>
   );
 }
 
