@@ -4,7 +4,7 @@ import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 
 import FarmerDashboard from './pages/farmer/FarmerDashboard';
-import CustomerDashboard from './pages/user/userDashboard';
+import CustomerDashboard from './pages/user/UserDashboard';
 import AdminDashboard from './pages/admin/AdminDashboard';
 
 function App() {
