@@ -1,9 +1,9 @@
-import { BrowserRouter, Routes, Route } from 'react-router‑dom';
+import { Router, Routes, Route } from 'react-router‑dom';
 
 
 function App() {
   return (
-    <BrowserRouter>   {/* ← this must match the import */}
+    <Router>   {/* ← this must match the import */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
@@ -17,7 +17,7 @@ function App() {
         {/* optional catch‑all */}
         <Route path="*" element={<h1>404 – Not Found</h1>} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
