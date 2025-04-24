@@ -27,7 +27,7 @@ const FarmerDashboard = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.post(`${API_URL}/auth/farmer/profile`, profile, { withCredentials: true })
+    axios.post(`${API_URL}/auth/farmer/profile`,{...profile}, { withCredentials: true ,headers: { "Content-Type": "application/json" }})
       .then(res => {
         setMsg(res.data.msg);
         setIsComplete(true); // ✅ After update, set complete

@@ -17,7 +17,7 @@ function App() {
 
         {/* Dashboards */}
         <Route path="/farmer/dashboard" element={<FarmerDashboard />} />
-        <Route path="/customer/dashboard" element={<CustomerDashboard />} />
+        <Route path="/user/dashboard" element={<CustomerDashboard />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
       </Routes>
     </Router>
