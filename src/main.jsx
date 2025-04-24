@@ -14,8 +14,7 @@ function App() {
         <Route path="/farmer/dashboard" element={<FarmerDashboard />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
-        {/* optional catch‑all */}
-        <Route path="*" element={<h1>404 – Not Found</h1>} />
+        
       </Routes>
     </Router>
   );
